@@ -45,6 +45,21 @@ Followers <span class="badge">
 </span>
 <% end %>
 </li>
+
+<% if current_user == @user %>
+            
+      <li class="
+<%= 'active' if current_page?(myfavorites_user_path(@user)) %>
+">
+<%= link_to myfavorites_user_path(@user) do %>
+myfavorites <span class="badge">
+<%= @count_favomicroposts %>
+</span>
+<% end %>
+</li>
+
+<% end %>
+
     </ul>
     
 <%= render 'microposts/microposts', microposts: @microposts %>
